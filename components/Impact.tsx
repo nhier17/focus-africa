@@ -149,11 +149,11 @@ export function Impact() {
 
                             <div className="border-l border-cream/15 px-4">
                                 <p className="font-display text-3xl font-bold text-lime md:text-4xl">
-                                    40+
+                                    14+
                                 </p>
 
                                 <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.14em] text-cream/55 md:text-xs">
-                                    Countries
+                                    Years of Excellence
                                 </p>
                             </div>
 

@@ -30,9 +30,11 @@ export function AnimatedCounter({
         ).matches;
 
         if (prefersReducedMotion) {
-            setCount(target);
-            setHasAnimated(true);
-            return;
+            const frame = requestAnimationFrame(() => {
+                setCount(target);
+                setHasAnimated(true);
+            });
+            return () => cancelAnimationFrame(frame);
         }
 
         const observer = new IntersectionObserver(

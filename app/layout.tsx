@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Manrope} from "next/font/google";
 import "./globals.css";
 import {Navbar} from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -28,12 +29,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${plusJakartaSans.variable} ${manrope.variable} antialiased`}
     >
-      <body suppressHydrationWarning={true}>
-      <Navbar />
-      {children}
-      <Footer />
+      <body suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

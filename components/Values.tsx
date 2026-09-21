@@ -95,8 +95,8 @@ export function Values() {
                                 key={value.number}
                                 className={`value-row group relative grid grid-cols-1 gap-6 border-b border-border py-8 transition-colors duration-500 md:grid-cols-12 md:gap-8 md:py-10 ${
                                     index === 0
-                                        ? "bg-cream/40"
-                                        : "hover:bg-cream/40"
+                                        ? "bg-cream/40 dark:bg-card/60"
+                                        : "hover:bg-cream/40 dark:hover:bg-card/40"
                                 }`}
                             >
                                 <div className="md:col-span-2">
@@ -112,7 +112,7 @@ export function Values() {
                                 </div>
 
                                 <div className="md:col-span-4">
-                                    <h3 className="max-w-sm font-display text-2xl font-bold leading-tight tracking-tight text-forest transition-transform duration-500 group-hover:translate-x-1 md:text-3xl">
+                                    <h3 className="max-w-sm font-display text-2xl font-bold leading-tight tracking-tight text-forest dark:text-foreground transition-transform duration-500 group-hover:translate-x-1 md:text-3xl">
                                         {value.title}
                                     </h3>
                                 </div>
@@ -124,7 +124,7 @@ export function Values() {
 
                                     <span
                                         aria-hidden="true"
-                                        className="mt-1 hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-forest/40 transition-all duration-500 group-hover:border-coral group-hover:text-coral md:flex"
+                                        className="mt-1 hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-forest/40 dark:text-cream/40 transition-all duration-500 group-hover:border-coral group-hover:text-coral md:flex"
                                     >
                                         <ArrowUpRight
                                             size={18}

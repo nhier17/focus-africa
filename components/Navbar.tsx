@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -87,7 +88,7 @@ export function Navbar() {
                                 <a
                                     key={link.label}
                                     href={link.href}
-                                    className="group relative text-sm font-medium text-foreground/75 transition-colors duration-200 hover:text-forest"
+                                    className="group relative text-base font-medium text-foreground/75 transition-colors duration-200 hover:text-forest dark:hover:text-lime"
                                 >
                                     {link.label}
 
@@ -97,9 +98,11 @@ export function Navbar() {
                         </div>
 
                         <div className="flex items-center gap-3">
+                            <ThemeToggle />
+
                             <a
                                 href="#contact"
-                                className="hidden items-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-forest-dark hover:scale-[1.02] active:scale-95 sm:inline-flex"
+                                className="hidden items-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-forest-dark hover:scale-[1.02] active:scale-95 sm:inline-flex dark:bg-lime dark:text-forest-dark dark:hover:bg-lime/90"
                             >
                                 Get in Touch
                             </a>
@@ -136,7 +139,7 @@ export function Navbar() {
                 )}
                 aria-hidden={!menuOpen}
             >
-                <div className="mx-4 overflow-hidden rounded-2xl bg-forest p-6 shadow-2xl">
+                <div className="mx-4 overflow-hidden rounded-2xl bg-forest p-6 shadow-2xl dark:border dark:border-cream/10">
                     <div className="flex flex-col">
                         {NAV_LINKS.map((link) => (
                             <Link

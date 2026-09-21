@@ -132,7 +132,7 @@ export function About() {
 
                         <h2 className="about-text-item max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.04em] text-foreground text-balance sm:text-5xl lg:text-6xl">
                             Experience that moves{" "}
-                            <span className="text-forest">Africa</span>{" "}
+                            <span className="text-forest dark:text-lime">Africa</span>{" "}
                             forward.
                         </h2>
 
@@ -163,7 +163,7 @@ export function About() {
 
                         <a
                             href="#services"
-                            className="about-text-item group mt-9 inline-flex items-center gap-3 text-sm font-semibold text-forest transition-colors duration-300 hover:text-coral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-4"
+                            className="about-text-item group mt-9 inline-flex items-center gap-3 text-sm font-semibold text-forest dark:text-lime transition-colors duration-300 hover:text-coral dark:hover:text-coral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-4"
                         >
                             Discover our approach
 
@@ -176,7 +176,7 @@ export function About() {
 
                         <div className="about-text-item mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-border pt-6 sm:grid-cols-3">
                             <div>
-                                <p className="font-display text-2xl font-bold text-forest">
+                                <p className="font-display text-2xl font-bold text-forest dark:text-lime">
                                     10+
                                 </p>
 
@@ -186,7 +186,7 @@ export function About() {
                             </div>
 
                             <div>
-                                <p className="font-display text-2xl font-bold text-forest">
+                                <p className="font-display text-2xl font-bold text-forest dark:text-lime">
                                     Africa
                                 </p>
 
@@ -196,7 +196,7 @@ export function About() {
                             </div>
 
                             <div>
-                                <p className="font-display text-2xl font-bold text-forest">
+                                <p className="font-display text-2xl font-bold text-forest dark:text-lime">
                                     360°
                                 </p>
 

@@ -1,4 +1,4 @@
-import { FaLinkedin as Linkedin, FaTwitter as Twitter, FaFacebookF as Facebook, FaInstagram as Instagram } from "react-icons/fa";
+import { FaLinkedin as Linkedin, FaTwitter as Twitter, FaFacebookF as Facebook } from "react-icons/fa";
 
 export const NAV_LINKS = [
     { label: "Home", href: "#home" },
@@ -15,7 +15,7 @@ export const SERVICE_LINKS = [
     "Monitoring & Evaluation",
     "Project Management",
     "Finance & Administration",
-    "Training & Capacity Development",
+    "Training & Capacity Building",
     "Research & Development",
 ];
 
@@ -28,7 +28,6 @@ export const SOCIAL_LINKS = [
 export const STATS = [
     { target: 14, suffix: "+", label: "Years of Excellence" },
     { target: 128, suffix: "+", label: "Projects Delivered" },
-    { target: 40, suffix: "+", label: "African Countries" },
     { target: 10000, suffix: "+", label: "Lives Transformed" },
 ];
 
@@ -59,7 +58,7 @@ export const SERVICES = [
     },
     {
         number: "05",
-        title: "Training & Capacity Development",
+        title: "Training & Capacity Building",
         description:
             "Building the skills, leadership capabilities, and institutional strength needed for long-term success.",
     },

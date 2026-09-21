@@ -2,9 +2,10 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { ArrowDown, ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import {ArrowDown, ArrowRight} from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
     const root = useRef<HTMLElement>(null);
@@ -100,7 +101,7 @@ export function Hero() {
                                 className="h-px w-10 bg-coral"
                             />
 
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest md:text-xs md:tracking-[0.2em]">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest md:text-xs md:tracking-[0.2em] dark:text-lime">
                                 Strategic consulting across Africa
                             </span>
                         </div>
@@ -114,7 +115,7 @@ export function Hero() {
 
                             <span className="block overflow-hidden">
                                 <span className="hero-line block">
-                                    <span className="text-forest">
+                                    <span className="text-forest dark:text-lime">
                                         African
                                     </span>{" "}
                                     perspective.
@@ -137,6 +138,29 @@ export function Hero() {
                             solutions for sustainable growth, stronger
                             leadership, and meaningful transformation.
                         </p>
+
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                            <Link
+                                href="#contact"
+                                className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-semibold text-cream transition-all hover:bg-forest-dark hover:gap-3 active:scale-95"
+                            >
+                                Talk to us
+                                <ArrowRight
+                                    size={16}
+                                    className="transition-transform group-hover:translate-x-0.5"
+                                />
+                            </Link>
+                            <Link
+                                href="#services"
+                                className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 dark:border-lime/20 px-7 py-3.5 text-sm font-semibold text-forest dark:text-lime transition-all hover:border-forest dark:hover:border-lime hover:bg-forest/5 dark:hover:bg-lime/5 active:scale-95"
+                            >
+                                Explore Our Services
+                                <ArrowDown
+                                    size={16}
+                                    className="transition-transform group-hover:translate-y-0.5"
+                                />
+                            </Link>
+                    </div>
 
                         <div className="mt-12 hidden items-center gap-4 border-t border-border pt-5 sm:flex">
                             <span className="h-2 w-2 rounded-full bg-lime" />
@@ -197,7 +221,7 @@ export function Hero() {
                             <div className="flex items-center gap-2.5 sm:gap-3">
                                 <span className="h-2 w-2 rounded-full bg-coral" />
 
-                                <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-forest sm:text-xs sm:tracking-[0.16em]">
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-forest sm:text-xs sm:tracking-[0.16em] dark:text-foreground">
                                     Insight with purpose
                                 </span>
                             </div>

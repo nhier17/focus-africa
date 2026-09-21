@@ -59,7 +59,7 @@ export function Services() {
         <section
             id="services"
             ref={root}
-            className="relative overflow-hidden bg-cream/40 section-padding"
+            className="relative overflow-hidden bg-cream/40 dark:bg-card/30 section-padding"
         >
             <div
                 aria-hidden="true"
@@ -78,7 +78,7 @@ export function Services() {
                     title={
                         <>
                             Solutions designed for{" "}
-                            <span className="text-forest">
+                            <span className="text-forest dark:text-lime">
                                 sustainable growth.
                             </span>
                         </>
@@ -91,10 +91,10 @@ export function Services() {
                         {SERVICES.map((service, index) => (
                             <article
                                 key={service.number}
-                                className={`service-row group relative flex min-h-[280px] flex-col justify-between bg-background p-7 transition-colors duration-500 md:p-8 ${
+                                className={`service-row group relative flex min-h-[280px] flex-col justify-between bg-background dark:bg-card/70 p-7 transition-colors duration-500 md:p-8 ${
                                     index === 0
-                                        ? "bg-forest text-cream hover:bg-forest-dark"
-                                        : "hover:bg-forest"
+                                        ? "bg-forest dark:bg-forest-dark text-cream hover:bg-forest-dark dark:hover:bg-forest"
+                                        : "hover:bg-forest dark:hover:bg-forest"
                                 }`}
                             >
                                 <div>
@@ -103,7 +103,7 @@ export function Services() {
                                             className={`font-display text-2xl font-bold transition-colors duration-500 ${
                                                 index === 0
                                                     ? "text-lime"
-                                                    : "text-forest/25 group-hover:text-lime"
+                                                    : "text-forest/25 dark:text-cream/25 group-hover:text-lime"
                                             }`}
                                         >
                                             {service.number}
@@ -113,7 +113,7 @@ export function Services() {
                                             className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-500 ${
                                                 index === 0
                                                     ? "border-cream/25 text-lime"
-                                                    : "border-border text-forest/40 group-hover:border-cream/25 group-hover:text-lime"
+                                                    : "border-border text-forest/40 dark:text-cream/40 group-hover:border-cream/25 group-hover:text-lime"
                                             }`}
                                         >
                                             <ArrowUpRight
