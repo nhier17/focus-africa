@@ -3,16 +3,12 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-    ArrowLeft,
-    ArrowRight,
-    Check,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight} from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-
 import type { ServiceDetail } from "@/lib/service";
+import {SERVICES} from "@/lib/service";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +18,12 @@ interface ServiceDetailsProps {
 
 export default function ServiceDetails({ service }: ServiceDetailsProps) {
     const root = useRef<HTMLElement>(null);
+
+    const currentIndex = SERVICES.findIndex(
+        (item) => item.slug === service.slug
+    );
+
+    const nextService =  SERVICES[(currentIndex + 1) % SERVICES.length];
 
     useGSAP(
         () => {
@@ -122,7 +124,6 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
             ref={root}
             className="overflow-hidden bg-background"
         >
-            {/* HERO */}
             <section className="relative bg-background pb-16 pt-28 md:pb-24 md:pt-36">
                 <div className="mx-auto max-w-7xl px-5 md:px-8">
                     <Link
@@ -137,7 +138,6 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                     </Link>
 
                     <div className="grid items-end gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-                        {/* TITLE */}
                         <div>
                             <div className="service-eyebrow mb-6 flex items-center gap-3">
                                 <span
@@ -161,7 +161,6 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                             </p>
                         </div>
 
-                        {/* IMAGE */}
                         <div className="relative">
                             <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full border border-lime/30" />
 
@@ -176,14 +175,10 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                                         className="object-cover"
                                     />
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent" />
-
-                                    <div className="absolute bottom-6 left-6 right-6">
-                                        <p className="max-w-sm text-sm font-medium leading-6 text-cream">
-                                            Practical expertise. Regional
-                                            insight. Meaningful impact.
-                                        </p>
-                                    </div>
+                                    <div
+                                        aria-hidden="true"
+                                        className="absolute inset-0 bg-gradient-to-t from-forest-dark/60 via-transparent to-transparent"
+                                    />
                                 </div>
                             </div>
 
@@ -195,7 +190,6 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </div>
             </section>
 
-            {/* INTRODUCTION */}
             <section className="border-y border-border bg-cream/40 dark:bg-card/30">
                 <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
                     <div>
@@ -204,20 +198,19 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                         </span>
 
                         <h2 className="mt-4 max-w-sm font-display text-3xl font-bold leading-tight tracking-[-0.035em] text-foreground md:text-4xl">
-                            Turning expertise into practical action.
+                            Expertise grounded in the realities of Africa.
                         </h2>
                     </div>
 
                     <div className="service-approach">
-                        <p className="max-w-3xl text-lg leading-9 text-brand-muted md:text-xl md:leading-10">
+                        <p className="service-approach max-w-3xl text-lg leading-8 text-brand-muted md:text-xl md:leading-9">
                             {service.description}
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* OFFERINGS */}
-            <section className="service-offerings bg-background py-20 md:py-28">
+            <section className="service-offerings bg-background section-padding">
                 <div className="mx-auto max-w-7xl px-5 md:px-8">
                     <div className="mb-12 max-w-2xl md:mb-16">
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
@@ -235,17 +228,15 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                                 key={offering}
                                 className="service-offering group relative bg-background p-7 transition-colors duration-300 hover:bg-cream/50 dark:hover:bg-card md:p-9"
                             >
-                                <div className="mb-8 flex items-center justify-between">
-                                    <span className="font-mono text-xs font-semibold tracking-[0.15em] text-brand-muted">
-                                        0{index + 1}
+                                <div className="mb-10 flex items-start justify-between">
+                                    <span className="font-mono text-sm font-semibold tracking-[0.12em] text-coral">
+                                        {String(index + 1).padStart(2, "0")}
                                     </span>
 
-                                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors duration-300 group-hover:border-coral group-hover:bg-coral group-hover:text-cream">
-                                        <Check
-                                            size={16}
-                                            aria-hidden="true"
-                                        />
-                                    </span>
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-px w-10 bg-border transition-all duration-300 group-hover:w-16 group-hover:bg-coral"
+                                    />
                                 </div>
 
                                 <p className="max-w-lg font-display text-xl font-semibold leading-8 tracking-[-0.02em] text-foreground md:text-2xl">
@@ -257,8 +248,7 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="bg-forest py-20 text-cream md:py-28">
+            <section className="bg-forest text-cream section-padding">
                 <div className="mx-auto max-w-7xl px-5 md:px-8">
                     <div className="relative overflow-hidden rounded-[2rem] border border-cream/10 bg-forest-dark p-8 md:p-12 lg:p-16">
                         <div
@@ -278,7 +268,7 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                                 </span>
 
                                 <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-[-0.04em] md:text-5xl lg:text-6xl">
-                                    Ready to move your organisation forward?
+                                    Ready to explore {service.title}?
                                 </h2>
 
                                 <p className="mt-6 max-w-xl text-base leading-8 text-cream/60 md:text-lg">
@@ -303,29 +293,36 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </div>
             </section>
 
-            {/* NEXT SERVICE */}
             <section className="border-t border-border bg-background">
                 <div className="mx-auto max-w-7xl px-5 md:px-8">
                     <Link
-                        href="/#services"
-                        className="group flex items-center justify-between gap-6 py-8 md:py-10"
+                        href={`/services/${nextService.slug}`}
+                        className="group block py-10 md:py-14"
                     >
-                        <div>
-                            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
-                                Explore all services
-                            </span>
+                        <div className="flex items-end justify-between gap-8">
+                            <div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
+                        Next service
+                    </span>
 
-                            <p className="mt-2 font-display text-xl font-bold text-foreground">
-                                View our complete range of solutions
-                            </p>
-                        </div>
-
-                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border text-forest transition-all duration-300 group-hover:border-forest group-hover:bg-forest group-hover:text-cream dark:text-lime dark:group-hover:border-lime dark:group-hover:bg-lime dark:group-hover:text-forest">
-                            <ArrowRight
-                                size={18}
-                                className="transition-transform duration-300 group-hover:translate-x-1"
-                            />
+                                <div className="mt-4 flex items-center gap-4">
+                        <span className="font-mono text-sm font-semibold text-coral">
+                            {nextService.number}
                         </span>
+
+                                    <h2 className="font-display text-2xl font-bold tracking-[-0.03em] text-foreground transition-colors duration-300 group-hover:text-forest dark:group-hover:text-lime md:text-4xl">
+                                        {nextService.title}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border text-forest transition-all duration-300 group-hover:border-forest group-hover:bg-forest group-hover:text-cream dark:text-lime dark:group-hover:border-lime dark:group-hover:bg-lime dark:group-hover:text-forest">
+                    <ArrowRight
+                        size={18}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                </span>
+                        </div>
                     </Link>
                 </div>
             </section>
