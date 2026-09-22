@@ -34,39 +34,63 @@ export const STATS = [
 export const SERVICES = [
     {
         number: "01",
+        slug: "agriculture-environment-climate",
         title: "Agriculture, Environment & Climate",
         description:
             "Supporting sustainable agriculture, environmental initiatives, climate resilience, and responsible development.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Fagriculture.jpg&w=1080&q=75",
+        alt: "Aerial view of vast green agricultural fields in Tanzania",
     },
     {
         number: "02",
+        slug: "monitoring-evaluation",
         title: "Monitoring & Evaluation",
         description:
             "Helping organizations measure performance, understand outcomes, and improve the effectiveness of their programs.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Fmonitoring.jpg&w=1080&q=75",
+        alt: "Tablet showing a web analytics dashboard with graphs and charts",
     },
     {
         number: "03",
+        slug: "project-management",
         title: "Project Management",
         description:
             "Providing structured planning, implementation, coordination, and delivery support for complex initiatives.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Fhandshake.jpg&w=1080&q=75",
+        alt: "Engineers reviewing a construction blueprint on a laptop",
     },
     {
         number: "04",
+        slug: "finance-administration",
         title: "Finance & Administration",
         description:
             "Strengthening financial systems, operational processes, governance, and organizational efficiency.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Ffinance.jpg&w=1080&q=75",
+        alt: "Calculator with glasses and folders on an office desk",
     },
     {
         number: "05",
+        slug: "training-capacity-building",
         title: "Training & Capacity Building",
         description:
             "Building the skills, leadership capabilities, and institutional strength needed for long-term success.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Ftraining.jpg&w=1080&q=75",
+        alt: "Business professionals attending a conference session",
     },
     {
         number: "06",
+        slug: "research-development",
         title: "Research & Development",
         description:
             "Generating insights, conducting research, and developing evidence-based strategies for informed decision-making.",
+        image:
+            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Fresearch.jpg&w=1080&q=75",
+        alt: "Researcher working with books and notes in a library",
     },
 ];
 
