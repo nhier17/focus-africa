@@ -11,7 +11,7 @@ export const NAV_LINKS = [
 
 
 export const SERVICE_LINKS = [
-    "Agriculture, Environment & Climate",
+    "Agriculture, Environment & Climate Change",
     "Monitoring & Evaluation",
     "Project Management",
     "Finance & Administration",

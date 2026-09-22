@@ -177,7 +177,7 @@ export function About() {
                         <div className="about-text-item mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-border pt-6 sm:grid-cols-3">
                             <div>
                                 <p className="font-display text-2xl font-bold text-forest dark:text-lime">
-                                    10+
+                                    14+
                                 </p>
 
                                 <p className="mt-1 text-xs uppercase tracking-[0.14em] text-brand-muted">

@@ -13,7 +13,7 @@ export const SERVICES: ServiceDetail[] = [
     {
         number: "01",
         slug: "agriculture-environment-climate",
-        title: "Agriculture, Environment & Climate",
+        title: "Agriculture, Environment & Climate Change",
         tagline:
             "Supporting sustainable agriculture, environmental initiatives, climate resilience, and responsible development.",
         description:

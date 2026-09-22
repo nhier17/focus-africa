@@ -136,17 +136,7 @@ export function Impact() {
                             across Africa.
                         </p>
 
-                        <div className="impact-text mt-10 grid max-w-xl grid-cols-3 border-y border-cream/15 py-6">
-                            <div className="pr-4">
-                                <p className="font-display text-3xl font-bold text-lime md:text-4xl">
-                                    12+
-                                </p>
-
-                                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.14em] text-cream/55 md:text-xs">
-                                    Years
-                                </p>
-                            </div>
-
+                        <div className="impact-text mt-10 grid max-w-xl grid-cols-2 border-y border-cream/15 py-6">
                             <div className="border-l border-cream/15 px-4">
                                 <p className="font-display text-3xl font-bold text-lime md:text-4xl">
                                     14+
