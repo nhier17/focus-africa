@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -161,7 +162,7 @@ export function About() {
                             </p>
                         </div>
 
-                        <a
+                        <Link
                             href="#services"
                             className="about-text-item group mt-9 inline-flex items-center gap-3 text-sm font-semibold text-forest dark:text-lime transition-colors duration-300 hover:text-coral dark:hover:text-coral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-4"
                         >
@@ -172,7 +173,7 @@ export function About() {
                                 aria-hidden="true"
                                 className="transition-transform duration-300 group-hover:translate-x-1"
                             />
-                        </a>
+                        </Link>
 
                         <div className="about-text-item mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-border pt-6 sm:grid-cols-3">
                             <div>

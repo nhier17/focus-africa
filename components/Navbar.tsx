@@ -101,7 +101,7 @@ export function Navbar() {
                             <ThemeToggle />
 
                             <a
-                                href="#contact"
+                                href="/contacts"
                                 className="hidden items-center rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-forest-dark hover:scale-[1.02] active:scale-95 sm:inline-flex dark:bg-lime dark:text-forest-dark dark:hover:bg-lime/90"
                             >
                                 Get in Touch

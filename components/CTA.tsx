@@ -146,7 +146,7 @@ return (
 
                     <div className="cta-image relative min-h-[320px] overflow-hidden sm:min-h-[380px] md:min-h-[430px]">
                         <Image
-                            src="/images/con.jpg"
+                            src="/images/contact.jpg"
                             alt="A partnership handshake between Focus Africa Leadership advisors and a client"
                             fill
                             className="object-cover"

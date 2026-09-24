@@ -1,12 +1,12 @@
 import { FaLinkedin as Linkedin, FaTwitter as Twitter, FaFacebookF as Facebook } from "react-icons/fa";
 
 export const NAV_LINKS = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Values", href: "#values" },
-    { label: "Impact", href: "#impact" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "About", href: "/#about" },
+    { label: "Services", href: "/#services" },
+    { label: "Values", href: "/#values" },
+    { label: "Impact", href: "/#impact" },
+    { label: "Contact", href: "/contacts" },
 ];
 
 

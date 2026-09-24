@@ -70,7 +70,7 @@ export function Values() {
                 className="pointer-events-none absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-coral/5 blur-3xl"
             />
 
-            <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+            <div className="relative container-custom">
                 <div className="values-heading mb-14 max-w-3xl md:mb-20">
                     <span className="mb-5 block text-xs font-semibold uppercase tracking-[0.2em] text-coral">
                         Our Values

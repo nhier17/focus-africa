@@ -4,7 +4,7 @@ import {About} from "@/components/About";
 import {Services} from "@/components/Services";
 import {Values} from "@/components/Values";
 import {Impact} from "@/components/Impact";
-import {Contact} from "@/components/Contact";
+import { CTA } from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -13,10 +13,10 @@ export default function Home() {
     <section className="root-container">
         <Stats />
        <About />
-      <Services />
+        <Services />
         <Values />
         <Impact />
-        <Contact />
+        <CTA />
     </section>
     </>
   );

@@ -141,7 +141,7 @@ export function Hero() {
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
                             <Link
-                                href="#contact"
+                                href="/contacts"
                                 className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-semibold text-cream transition-all hover:bg-forest-dark hover:gap-3 active:scale-95"
                             >
                                 Talk to us

@@ -53,7 +53,7 @@ export const SERVICES: ServiceDetail[] = [
             "Providing structured planning, implementation, coordination, and delivery support for complex initiatives.",
         description:
             "We provide end-to-end project management expertise to ensure complex initiatives are delivered on time, within scope, and to the highest standard. Our structured approach reduces risk and drives measurable results.",
-        image: "/images/pro.jpg",
+        image: "/images/project.jpg",
         alt: "Engineers reviewing a construction blueprint on a laptop",
         offerings: [
             "Plan your programme and get it off to a strong, organised start",
@@ -70,8 +70,7 @@ export const SERVICES: ServiceDetail[] = [
             "Strengthening financial systems, operational processes, governance, and organizational efficiency.",
         description:
             "We help organizations build strong financial foundations and efficient administrative systems. From governance frameworks to operational processes, we ensure organizations have the structure they need to scale sustainably.",
-        image:
-            "https://focusafrica-git-design-v3-techtoxics-projects.vercel.app/_next/image?url=%2Fimages%2Ffinance.jpg&w=1080&q=75",
+        image: "/images/finance.jpg",
         alt: "Calculator with glasses and folders on an office desk",
         offerings: [
             "Manage your funds carefully, accurately and transparently",

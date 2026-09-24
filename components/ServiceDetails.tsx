@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight} from "lucide-react";
+import {ArrowLeft, ArrowRight, Check} from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
@@ -24,6 +24,7 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
     );
 
     const nextService =  SERVICES[(currentIndex + 1) % SERVICES.length];
+    const previousService =  SERVICES[(currentIndex - 1 + SERVICES.length) % SERVICES.length];
 
     useGSAP(
         () => {
@@ -33,61 +34,64 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
 
             if (prefersReducedMotion) return;
 
-            const timeline = gsap.timeline({
+            const intro = gsap.timeline({
                 defaults: {
                     ease: "power3.out",
                 },
             });
 
-            timeline
-                .from(".service-back", {
-                    y: 15,
+            intro
+                .from(".service-page-eyebrow", {
+                    y: 20,
                     opacity: 0,
-                    duration: 0.45,
+                    duration: 0.5,
                 })
                 .from(
-                    ".service-eyebrow",
+                    ".service-page-title",
                     {
-                        y: 20,
+                        y: 30,
                         opacity: 0,
-                        duration: 0.5,
-                    },
-                    "-=0.2"
-                )
-                .from(
-                    ".service-title-line",
-                    {
-                        yPercent: 100,
-                        opacity: 0,
-                        duration: 0.8,
+                        duration: 0.7,
                     },
                     "-=0.25"
                 )
                 .from(
-                    ".service-intro",
+                    ".service-page-intro",
                     {
                         y: 20,
                         opacity: 0,
                         duration: 0.6,
                     },
-                    "-=0.35"
+                    "-=0.3"
                 )
                 .from(
-                    ".service-hero-image",
+                    ".service-page-image",
                     {
                         clipPath: "inset(0 0 100% 0)",
-                        duration: 1,
+                        duration: 0.9,
                     },
-                    "-=0.45"
+                    "-=0.4"
                 )
                 .from(
-                    ".service-hero-image img",
+                    ".service-page-image img",
                     {
-                        scale: 1.12,
-                        duration: 1.3,
+                        scale: 1.08,
+                        duration: 1.1,
                     },
                     "<"
                 );
+
+            gsap.from(".service-content", {
+                scrollTrigger: {
+                    trigger: ".service-content",
+                    start: "top 78%",
+                    once: true,
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power3.out",
+            });
 
             gsap.from(".service-offering", {
                 scrollTrigger: {
@@ -95,22 +99,10 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                     start: "top 78%",
                     once: true,
                 },
-                y: 25,
+                y: 20,
                 opacity: 0,
-                duration: 0.55,
+                duration: 0.5,
                 stagger: 0.08,
-                ease: "power3.out",
-            });
-
-            gsap.from(".service-approach", {
-                scrollTrigger: {
-                    trigger: ".service-approach",
-                    start: "top 80%",
-                    once: true,
-                },
-                y: 25,
-                opacity: 0,
-                duration: 0.7,
                 ease: "power3.out",
             });
         },
@@ -125,46 +117,42 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
             className="overflow-hidden bg-background"
         >
             <section className="relative bg-background pb-16 pt-28 md:pb-24 md:pt-36">
-                <div className="mx-auto max-w-7xl px-5 md:px-8">
-                    <Link
-                        href="/#services"
-                        className="service-back group mb-12 inline-flex items-center gap-2 text-sm font-medium text-brand-muted transition-colors hover:text-forest dark:hover:text-lime md:mb-16"
-                    >
-                        <ArrowLeft
-                            size={16}
-                            className="transition-transform duration-300 group-hover:-translate-x-1"
-                        />
-                        Back to services
-                    </Link>
-
-                    <div className="grid items-end gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+                <div className="container-custom">
+                    <div className="grid items-end gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                         <div>
-                            <div className="service-eyebrow mb-6 flex items-center gap-3">
+                            <div className="service-page-eyebrow mb-6 flex items-center gap-3">
                                 <span
                                     aria-hidden="true"
                                     className="h-px w-10 bg-coral"
                                 />
 
                                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-forest dark:text-lime">
-                                    Service {service.number}
+                                    What We Offer
                                 </span>
                             </div>
 
-                            <div className="overflow-hidden">
-                                <h1 className="service-title-line font-display text-[clamp(3rem,7vw,6.5rem)] font-bold leading-[0.92] tracking-[-0.055em] text-foreground">
-                                    {service.title}
-                                </h1>
-                            </div>
+                            <h1 className="service-page-title max-w-3xl font-display text-[clamp(3.2rem,7vw,6.5rem)] font-bold leading-[0.92] tracking-[-0.055em] text-foreground">
+                                Comprehensive{" "}
+                                <span className="text-coral">
+                                    consultancy services
+                                </span>
+                            </h1>
 
-                            <p className="service-intro mt-7 max-w-xl text-base leading-8 text-brand-muted md:text-lg">
-                                {service.tagline}
+                            <p className="service-page-intro mt-7 max-w-2xl text-base leading-8 text-brand-muted md:text-lg">
+                                Every organisation we work with is trying to
+                                do something that matters. Our job is to make
+                                it easier and to help you show it worked.
+                                Here&apos;s how we can support you.
                             </p>
                         </div>
 
                         <div className="relative">
-                            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full border border-lime/30" />
+                            <div
+                                aria-hidden="true"
+                                className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] bg-lime/60"
+                            />
 
-                            <div className="service-hero-image relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-forest p-1.5 shadow-2xl shadow-forest/10 md:p-2">
+                            <div className="service-page-image relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-forest p-1.5 shadow-2xl shadow-forest/10 md:p-2">
                                 <div className="relative h-full w-full overflow-hidden rounded-[1.5rem]">
                                     <Image
                                         src={service.image}
@@ -175,114 +163,133 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                                         className="object-cover"
                                     />
 
-                                    <div
-                                        aria-hidden="true"
-                                        className="absolute inset-0 bg-gradient-to-t from-forest-dark/60 via-transparent to-transparent"
-                                    />
-                                </div>
-                            </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/60 via-transparent to-transparent" />
 
-                            <div className="absolute -bottom-5 left-6 flex h-14 w-14 items-center justify-center rounded-full bg-coral text-sm font-bold text-cream shadow-xl">
-                                {service.number}
+                                    <div className="absolute bottom-5 left-5">
+                                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-cream/80">
+                                            Focus Africa Leadership
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="border-y border-border bg-cream/40 dark:bg-card/30">
-                <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
-                    <div>
-                        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
-                            Our Approach
-                        </span>
+            <section className="border-y border-border bg-cream/40 dark:bg-card/30 section-padding">
+                <div className="container-custom">
+                    <div className="grid gap-12 lg:grid-cols-[0.3fr_0.7fr] lg:gap-20">
+                        <div>
+                            <div className="flex items-center gap-4">
+                                <span className="font-display text-5xl font-bold tracking-[-0.05em] text-coral md:text-6xl">
+                                    {service.number}
+                                </span>
 
-                        <h2 className="mt-4 max-w-sm font-display text-3xl font-bold leading-tight tracking-[-0.035em] text-foreground md:text-4xl">
-                            Expertise grounded in the realities of Africa.
-                        </h2>
-                    </div>
+                                <span className="h-px w-12 bg-coral" />
+                            </div>
 
-                    <div className="service-approach">
-                        <p className="service-approach max-w-3xl text-lg leading-8 text-brand-muted md:text-xl md:leading-9">
-                            {service.description}
-                        </p>
+                            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-muted">
+                                Selected Service
+                            </p>
+                        </div>
+
+                        <div className="service-content">
+                            <h2 className="max-w-4xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-foreground md:text-5xl lg:text-6xl">
+                                {service.title}
+                            </h2>
+
+                            <p className="mt-8 max-w-3xl text-lg leading-9 text-brand-muted md:text-xl md:leading-10">
+                                {service.description}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section className="service-offerings bg-background section-padding">
-                <div className="mx-auto max-w-7xl px-5 md:px-8">
-                    <div className="mb-12 max-w-2xl md:mb-16">
-                        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
-                            What We Offer
-                        </span>
+                <div className="container-custom">
+                    <div className="grid gap-12 lg:grid-cols-[0.3fr_0.7fr] lg:gap-20">
+                        <div>
+                            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
+                                What We Do
+                            </span>
 
-                        <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-[-0.04em] text-foreground md:text-5xl">
-                            Practical support for real-world challenges.
-                        </h2>
-                    </div>
+                            <h3 className="mt-4 max-w-sm font-display text-3xl font-bold leading-tight tracking-[-0.035em] text-foreground md:text-4xl">
+                                Practical support for real-world challenges.
+                            </h3>
+                        </div>
 
-                    <div className="grid gap-px overflow-hidden rounded-[2rem] border border-border bg-border md:grid-cols-2">
-                        {service.offerings.map((offering, index) => (
-                            <div
-                                key={offering}
-                                className="service-offering group relative bg-background p-7 transition-colors duration-300 hover:bg-cream/50 dark:hover:bg-card md:p-9"
-                            >
-                                <div className="mb-10 flex items-start justify-between">
-                                    <span className="font-mono text-sm font-semibold tracking-[0.12em] text-coral">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </span>
+                        <div className="grid gap-x-10 border-t border-border md:grid-cols-2">
+                            {service.offerings.map(
+                                (offering, index) => (
+                                    <div
+                                        key={offering}
+                                        className="service-offering group flex gap-5 border-b border-border py-7"
+                                    >
+                                        <span className="shrink-0 font-mono text-xs font-semibold tracking-[0.15em] text-brand-muted">
+                                            {String(index + 1).padStart(
+                                                2,
+                                                "0"
+                                            )}
+                                        </span>
 
-                                    <span
-                                        aria-hidden="true"
-                                        className="h-px w-10 bg-border transition-all duration-300 group-hover:w-16 group-hover:bg-coral"
-                                    />
-                                </div>
+                                        <div className="flex gap-4">
+                                            <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-forest text-cream transition-transform duration-300 group-hover:scale-110 dark:bg-lime dark:text-forest">
+                                                <Check
+                                                    size={13}
+                                                    strokeWidth={2.5}
+                                                />
+                                            </span>
 
-                                <p className="max-w-lg font-display text-xl font-semibold leading-8 tracking-[-0.02em] text-foreground md:text-2xl">
-                                    {offering}
-                                </p>
-                            </div>
-                        ))}
+                                            <p className="text-base leading-7 text-foreground md:text-lg">
+                                                {offering}
+                                            </p>
+                                        </div>
+                                    </div>
+                                )
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section className="bg-forest text-cream section-padding">
-                <div className="mx-auto max-w-7xl px-5 md:px-8">
-                    <div className="relative overflow-hidden rounded-[2rem] border border-cream/10 bg-forest-dark p-8 md:p-12 lg:p-16">
+                <div className="container-custom">
+                    <div className="relative overflow-hidden rounded-[2rem] bg-forest-dark px-7 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
                         <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-lime/10 blur-3xl"
+                            className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-lime/10 blur-3xl"
                         />
 
                         <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-coral/10 blur-3xl"
+                            className="pointer-events-none absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-coral/10 blur-3xl"
                         />
 
-                        <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
+                        <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
                             <div className="max-w-2xl">
                                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime">
-                                    Let&apos;s work together
+                                    Get Started
                                 </span>
 
                                 <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-[-0.04em] md:text-5xl lg:text-6xl">
-                                    Ready to explore {service.title}?
+                                    Let&apos;s discuss how we can help.
                                 </h2>
 
-                                <p className="mt-6 max-w-xl text-base leading-8 text-cream/60 md:text-lg">
-                                    Tell us what you are working on and let&apos;s
-                                    explore how Focus Africa Leadership can
-                                    support your next step.
+                                <p className="mt-6 max-w-xl text-base leading-8 text-cream/65 md:text-lg">
+                                    Tell us about your organisation, your
+                                    challenges, and what you are working
+                                    towards. Let&apos;s explore how this
+                                    service can support your goals.
                                 </p>
                             </div>
 
                             <Link
-                                href="/#contact"
-                                className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-full bg-coral px-7 py-4 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral/90"
+                                href="/contacts"
+                                className="group inline-flex w-fit items-center gap-3 rounded-full bg-coral px-7 py-4 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral/90"
                             >
-                                Discuss this service
+                                Get Started
                                 <ArrowRight
                                     size={17}
                                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -293,37 +300,65 @@ export default function ServiceDetails({ service }: ServiceDetailsProps) {
                 </div>
             </section>
 
-            <section className="border-t border-border bg-background">
-                <div className="mx-auto max-w-7xl px-5 md:px-8">
-                    <Link
-                        href={`/services/${nextService.slug}`}
-                        className="group block py-10 md:py-14"
-                    >
-                        <div className="flex items-end justify-between gap-8">
-                            <div>
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
-                        Next service
-                    </span>
+            <section className="border-t border-border bg-background section-padding">
+                <div className="container-custom">
+                    <div className="grid md:grid-cols-2">
+                        <Link
+                            href={`/services/${previousService.slug}`}
+                            className="group border-b border-border py-8 md:border-b-0 md:border-r md:pr-10 md:py-12"
+                        >
+                            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
+                                Previous Service
+                            </span>
 
-                                <div className="mt-4 flex items-center gap-4">
-                        <span className="font-mono text-sm font-semibold text-coral">
-                            {nextService.number}
-                        </span>
+                            <div className="mt-4 flex items-center justify-between gap-6">
+                                <div>
+                                    <span className="font-mono text-xs text-coral">
+                                        {previousService.number}
+                                    </span>
 
-                                    <h2 className="font-display text-2xl font-bold tracking-[-0.03em] text-foreground transition-colors duration-300 group-hover:text-forest dark:group-hover:text-lime md:text-4xl">
-                                        {nextService.title}
-                                    </h2>
+                                    <p className="mt-2 max-w-sm font-display text-xl font-bold tracking-[-0.02em] text-foreground md:text-2xl">
+                                        {previousService.title}
+                                    </p>
                                 </div>
-                            </div>
 
-                            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border text-forest transition-all duration-300 group-hover:border-forest group-hover:bg-forest group-hover:text-cream dark:text-lime dark:group-hover:border-lime dark:group-hover:bg-lime dark:group-hover:text-forest">
-                    <ArrowRight
-                        size={18}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                </span>
-                        </div>
-                    </Link>
+                                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-all duration-300 group-hover:border-forest group-hover:bg-forest group-hover:text-cream dark:group-hover:border-lime dark:group-hover:bg-lime dark:group-hover:text-forest">
+                                    <ArrowLeft
+                                        size={17}
+                                        className="transition-transform duration-300 group-hover:-translate-x-1"
+                                    />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
+                            href={`/services/${nextService.slug}`}
+                            className="group py-8 md:py-12 md:pl-10"
+                        >
+                            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
+                                Next Service
+                            </span>
+
+                            <div className="mt-4 flex items-center justify-between gap-6">
+                                <div>
+                                    <span className="font-mono text-xs text-coral">
+                                        {nextService.number}
+                                    </span>
+
+                                    <p className="mt-2 max-w-sm font-display text-xl font-bold tracking-[-0.02em] text-foreground md:text-2xl">
+                                        {nextService.title}
+                                    </p>
+                                </div>
+
+                                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-all duration-300 group-hover:border-forest group-hover:bg-forest group-hover:text-cream dark:group-hover:border-lime dark:group-hover:bg-lime dark:group-hover:text-forest">
+                                    <ArrowRight
+                                        size={17}
+                                        className="transition-transform duration-300 group-hover:translate-x-1"
+                                    />
+                                </span>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>
