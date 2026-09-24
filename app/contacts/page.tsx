@@ -274,7 +274,6 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                {/* Social Links */}
                                 <div className="mt-auto border-t border-cream/10 pt-7">
                                     <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/45">
                                         Follow Us
@@ -282,21 +281,21 @@ export default function ContactPage() {
 
                                     <div className="mt-4 flex flex-wrap gap-6">
                                         <Link
-                                            href="#"
+                                            href="https://x.com/FocusAfrica7"
                                             className="text-sm font-medium text-cream/80 transition-colors hover:text-lime"
                                         >
                                             Twitter
                                         </Link>
 
                                         <Link
-                                            href="#"
+                                            href="https://www.linkedin.com/in/focus-africa-leadership/"
                                             className="text-sm font-medium text-cream/80 transition-colors hover:text-lime"
                                         >
                                             LinkedIn
                                         </Link>
 
                                         <Link
-                                            href="#"
+                                            href="https://www.facebook.com/FOCUSAFRICALTD"
                                             className="text-sm font-medium text-cream/80 transition-colors hover:text-lime"
                                         >
                                             Facebook
@@ -306,9 +305,6 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        {/* =================================================
-                            SEND A MESSAGE
-                        ================================================== */}
                         <div className="contact-card rounded-[2rem] border border-border bg-card p-8 md:p-10 lg:p-11">
                             <div>
                                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-coral">
