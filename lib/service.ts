@@ -15,9 +15,9 @@ export const SERVICES: ServiceDetail[] = [
         slug: "agriculture-environment-climate",
         title: "Agriculture, Environment & Climate Change",
         tagline:
-            "Supporting sustainable agriculture, environmental initiatives, climate resilience, and responsible development.",
+            "Climate change is already changing daily life for farmers and communities across Africa: the rains, the harvests, the future. We help organisations, and the people they serve, adapt and build resilience and farm in ways that protect both livelihoods and the land for the years to come.",
         description:
-            "We work with organizations to design and implement sustainable agricultural practices, strengthen environmental stewardship, and build climate resilience across African communities. Our approach combines local knowledge with global best practices to create lasting ecological and economic impact.",
+            "Climate change is already changing daily life for farmers and communities across Africa: the rains, the harvests, the future. We help organisations, and the people they serve, adapt and build resilience and farm in ways that protect both livelihoods and the land for the years to come.",
         image: "/images/agri.jpg",
         alt: "Aerial view of vast green agricultural fields in Tanzania",
         offerings: [
@@ -34,8 +34,8 @@ export const SERVICES: ServiceDetail[] = [
         tagline:
             "Helping organizations measure performance, understand outcomes, and improve the effectiveness of their programs.",
         description:
-            "We help organizations build robust monitoring and evaluation frameworks that deliver actionable insights. By measuring what matters, we enable data-driven decisions that improve program effectiveness and demonstrate impact to stakeholders.",
-        image: "/images/res.jpg",
+            "It's not enough to do good work today. You have to show that it's working. We help you track your progress and prove your impact with clear, honest evidence that funders trust. And we go one step further: we help turn that same data into evidence that can unlock funding and open the door to credit for the farmers and communities you serve.",
+        image: "/images/monitor.jpg",
         alt: "Tablet showing a web analytics dashboard with graphs and charts",
         offerings: [
             "Design simple, practical M&E systems that fit how you actually work",
@@ -52,7 +52,7 @@ export const SERVICES: ServiceDetail[] = [
         tagline:
             "Providing structured planning, implementation, coordination, and delivery support for complex initiatives.",
         description:
-            "We provide end-to-end project management expertise to ensure complex initiatives are delivered on time, within scope, and to the highest standard. Our structured approach reduces risk and drives measurable results.",
+            "Running a big programme means holding a hundred things together at once: plans, budgets, deadlines, partners and funders who are counting on you. We take that weight off your shoulders. We manage your programme from the first plan to the final report, so nothing slips through the cracks and your funders stay confident in you.",
         image: "/images/project.jpg",
         alt: "Engineers reviewing a construction blueprint on a laptop",
         offerings: [
@@ -69,7 +69,7 @@ export const SERVICES: ServiceDetail[] = [
         tagline:
             "Strengthening financial systems, operational processes, governance, and organizational efficiency.",
         description:
-            "We help organizations build strong financial foundations and efficient administrative systems. From governance frameworks to operational processes, we ensure organizations have the structure they need to scale sustainably.",
+            "Good work needs a strong financial backbone. But managing money and admin, especially donor funds with strict rules, eats up time and causes worry. We keep your finances well-managed and your operations in order, so you can focus on your mission instead of the paperwork.",
         image: "/images/finance.jpg",
         alt: "Calculator with glasses and folders on an office desk",
         offerings: [
@@ -86,7 +86,7 @@ export const SERVICES: ServiceDetail[] = [
         tagline:
             "Building the skills, leadership capabilities, and institutional strength needed for long-term success.",
         description:
-            "We design and deliver training programs that build lasting capability within organizations and communities. Our approach focuses on practical skills, leadership development, and institutional strengthening that drives sustainable growth.",
+            "Your people are your greatest asset and they want to grow. We build their skills and their confidence with practical, hands-on training designed around your real needs, so the learning sticks long after the workshop ends.",
         image: "/images/training.jpg",
         alt: "Business professionals attending a conference session",
         offerings: [
@@ -104,7 +104,7 @@ export const SERVICES: ServiceDetail[] = [
         tagline:
             "Generating insights, conducting research, and developing evidence-based strategies for informed decision-making.",
         description:
-            "We conduct rigorous research and generate evidence-based insights that inform strategy, policy, and practice. Our work helps organizations make better decisions grounded in data and contextual understanding.",
+            "The best decisions are built on solid evidence, not guesswork. We do the research that helps you understand what is really happening on the ground, so you can choose your next step with confidence and stay ahead of what's coming.",
         image: "/images/mon.jpg",
         alt: "Researcher working with books and notes in a library",
         offerings: [

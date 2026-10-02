@@ -63,12 +63,6 @@ export function Services() {
             ref={root}
             className="relative overflow-hidden bg-cream/40 py-20 dark:bg-card/30 md:py-28"
         >
-            {/* Decorative background elements */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-24 top-20 h-64 w-64 rounded-full border border-lime/30"
-            />
-
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-coral/5 blur-3xl"
@@ -97,7 +91,6 @@ export function Services() {
                             className="service-card group block"
                         >
                             <article className="relative h-full overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl dark:bg-card">
-                                {/* Image */}
                                 <div className="relative aspect-[16/10] overflow-hidden">
                                     <Image
                                         src={service.image}
@@ -108,24 +101,18 @@ export function Services() {
                                     />
 
                                     <div className="absolute inset-0 bg-linear-to-t from-forest-dark/75 via-forest-dark/10 to-transparent" />
-
-                                    {/* Number */}
                                     <div className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-cream/95 text-xs font-bold text-forest shadow-sm backdrop-blur-sm dark:bg-forest-dark/90 dark:text-lime">
                                         {service.number}
                                     </div>
-
-                                    {/* Image label */}
                                     <div className="absolute bottom-5 left-5 right-5">
                                         <p className="max-w-xs font-display text-xl font-bold leading-tight text-cream md:text-2xl">
                                             {service.title}
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* Content */}
                                 <div className="flex min-h-[235px] flex-col p-6 md:p-7">
-                                    <p className="line-clamp-3 text-sm leading-7 text-brand-muted">
-                                        {service.tagline}
+                                    <p className="text-sm leading-7 text-brand-muted">
+                                        {service.description}
                                     </p>
 
                                     <div className="mt-auto flex items-center justify-between pt-8">
@@ -143,7 +130,6 @@ export function Services() {
                                     </div>
                                 </div>
 
-                                {/* Hover accent */}
                                 <div
                                     aria-hidden="true"
                                     className="absolute bottom-0 left-0 h-1 w-0 bg-coral transition-all duration-500 group-hover:w-full"
