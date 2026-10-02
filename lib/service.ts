@@ -87,7 +87,7 @@ export const SERVICES: ServiceDetail[] = [
             "Building the skills, leadership capabilities, and institutional strength needed for long-term success.",
         description:
             "Your people are your greatest asset and they want to grow. We build their skills and their confidence with practical, hands-on training designed around your real needs, so the learning sticks long after the workshop ends.",
-        image: "/images/training.jpg",
+        image: "/images/train.jpg",
         alt: "Business professionals attending a conference session",
         offerings: [
             "Corporate governance training for boards and leaders",

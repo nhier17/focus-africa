@@ -133,10 +133,7 @@ export function Hero() {
                         </h1>
 
                         <p className="hero-description mt-6 max-w-xl text-[15px] leading-7 text-brand-muted md:mt-7 md:text-lg md:leading-8">
-                            Empowering businesses, individuals, and
-                            organizations across Africa with strategic
-                            solutions for sustainable growth, stronger
-                            leadership, and meaningful transformation.
+                            From climate-smart agriculture to monitoring, evaluation and full project management, Focus Africa Leadership partners with NGOs, donors and government across East Africa, helping you deliver real results and prove the difference you make.
                         </p>
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -184,7 +181,7 @@ export function Hero() {
                         <div className="relative rounded-xl bg-forest p-1.5 shadow-2xl shadow-forest/10 md:p-2">
                             <div className="hero-media relative overflow-hidden rounded-xl aspect-4/5 md:aspect-5/6 lg:aspect-4/5 w-full">
                                 <Image
-                                    src="/images/hero.png"
+                                    src="/images/hero2.jpg"
                                     alt="Professionals collaborating during a business meeting"
                                     fill
                                     priority

@@ -59,7 +59,7 @@ export function Navbar() {
                         )}
                     >
                         <Link
-                            href="#home"
+                            href="/#home"
                             className="group flex items-center gap-2.5"
                             aria-label="Focus Africa Leadership home"
                         >
@@ -153,7 +153,7 @@ export function Navbar() {
                         ))}
 
                         <Link
-                            href="#contact"
+                            href="/contacts"
                             onClick={toggleMenu}
                             className="mt-6 inline-flex items-center justify-center rounded-full bg-lime px-6 py-3 text-sm font-semibold text-forest transition-transform hover:scale-[1.02] active:scale-95"
                         >
