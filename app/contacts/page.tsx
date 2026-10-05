@@ -10,7 +10,10 @@ import {
 } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import ContactForm from "@/components/ContactForm";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactPage() {
     const root = useRef<HTMLElement>(null);

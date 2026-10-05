@@ -53,7 +53,7 @@ export const SERVICES: ServiceDetail[] = [
             "Providing structured planning, implementation, coordination, and delivery support for complex initiatives.",
         description:
             "Running a big programme means holding a hundred things together at once: plans, budgets, deadlines, partners and funders who are counting on you. We take that weight off your shoulders. We manage your programme from the first plan to the final report, so nothing slips through the cracks and your funders stay confident in you.",
-        image: "/images/project.jpg",
+        image: "/images/hero.jpg",
         alt: "Engineers reviewing a construction blueprint on a laptop",
         offerings: [
             "Plan your programme and get it off to a strong, organised start",
