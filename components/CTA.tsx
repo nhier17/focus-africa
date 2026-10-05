@@ -127,7 +127,7 @@ export function CTA() {
                                     className="group h-12 rounded-xl bg-[#8BB336] px-5 text-forest shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-cream/90 hover:shadow-xl"
                                 >
                                     <Link
-                                        href="/contact"
+                                        href="/contacts"
                                         className="flex items-center justify-center gap-2 uppercase font-semibold"
                                     >
                                         <HeartHandshake className="h-5 w-5" />
